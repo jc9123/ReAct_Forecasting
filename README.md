@@ -1,0 +1,1 @@
+The dataset used is in homework.csv and manifold_market.csv. To evaluate the dataset, run either prompting_gpt.py or prompting_react.py. The generated csv is then proceed with process_data.py and compute_brier.py.
