@@ -1,0 +1,518 @@
+ ,Answer,Question,Staff Reasoning
+1,71,"How many people will be in the classroom at 4:15pm on Wednesday, January 24th?","We counted the number of people in lecture at the same time during the previous lecture and centered our intervals around this.
+
+We also considered the enrollment to give a sense of a reasonable upper bound."
+1,6902347,"How many dollars will the movie ""Mean Girls"" (the 2024 release) gross in the US on the weekend of Jan 26-28?
+This will resolve based on Box Office Mojo's number for Jan 26-28 here: https://www.boxofficemojo.com/release/rl615482113/weekend/?ref_=bo_rl_tab#tabs",We considered historical data for movies with the same number of weeks since release as a reference class and performed a linear regression.
+1,1,"Will ""Mean Girls"" (the 2024 release) be the highest-grossing movie in the US on the weekend of Jan 26-28?
+This will resolve based on this Box Office Mojo page: https://www.boxofficemojo.com/weekend/?ref_=bo_nb_wey_secondarytab
+
+Specifically, the question will resolve positively if the entry with row ""Jan 26-28"" and column ""#1 Release"" is ""Mean Girls,"" and negatively if that entry is another movie.","We considered other movies that were already out or about to release that may be likely to outcompete “Mean Girls” and determined that the only real contender was “Beekeeper.” Beekeeper had outperformed “Mean Girls” on Monday before the end of the forecasting period, which threw some uncertainty into our forecasts. Ultimately, the numbers were quite close."
+2,88,"What will the RSF Weight Room Crowd Meter read next to ""% Full"" on Monday, February 5 at 8:30am Pacific Time? To clarify, we are interested in the number for ""Weight Rooms"" not for ""CMS Fitness.""
+
+i.e. if the meter reads ""87% Full,"" the answer will be  ""87.""","We sampled the meter on several days at 8:30am to get a sense for how full the meter typically is at the given time.
+
+We checked the weather forecast for the given day since we believe it to have an effect on the meter (i.e. lower if it rains).
+
+We considered trends in the semester and that students may get busier in week 4, so we adjusted downward slightly.
+
+We searched for historical data online and found some that we could use."
+2,116600000,How many monthly listeners will the top artist on Spotify have on February 26th at 10am Pacific Time? This answer will resolve according to the number posted here: https://www.viberate.com/music-charts/top-artists-by-spotify-monthly-listeners/.,"We looked at the current and previous months’ numbers to get a ballpark sense of what it might become next month.
+
+We checked past and upcoming releases of albums/singles that might’ve led (or will lead) to a spike in the numbers for a particular artist. The Weeknd (who was currently #1 at 115.9M) just released some songs with Madonna on Jan 26, 2024, which we thought could lead to a spike for Feb 2024.
+
+We also looked at historical variability over past months to gauge how wide the confidence interval should be."
+2,0,"Will the fastest finisher of the 2024 San Francisco Half Marathon have a ""Gun Elapsed"" time faster than the fastest ""Gun Elapsed"" time from the 2023 San Francisco Half Marathon (which was 1:07:22)?
+
+This question will resolve based on the results posted here: https://results.svetiming.com/Pamakid/events/2024/san-francisco-half-marathon-10k--5K/results","Only a small handful of racers really have a reasonable shot at beating last year’s top time. These include past top finishers as well as new racers who happen to be very fast.
+
+We looked at the times of top finishers in the last few years and checked whether they were registered for the race this year."
+3,47438.1,"What will be the price of Bitcoin (BTC) on Friday, February 9th at 2:30pm PT?
+This will resolve based on the price listed here: https://www.coindesk.com/price/bitcoin/","We modeled this as a random walk in log space, looking at historical volatility.
+
+We considered whether we expected the volatility to be higher or lower than in the past.
+
+We used the implied volatility from Deribit - Crypto Options and Futures Exchange for Bitcoin as our data source."
+3,16,"How many three-pointers will Steph Curry attempt in the February 10th NBA game between
+the Golden State Warriors and the Phoenix Suns?","We looked at three reference classes for Steph Curry’s 3-point attempts
+
+Past games this year
+
+Games against the Suns
+
+Curry’s past seasons
+
+We considered how likely we thought Curry would be benched for rest and determined this probability was small enough not to include 0 in our intervals."
+3,1,"Kanye West has pushed back the release of his album ""Vultures"" multiple times since its scheduled release. Will it be released by the end of February 2024?","We looked at past reasons why the album was delayed, which included sample clearance issues.
+
+We read news that there is a listening party scheduled to take place in Chicago. The venue, United Center, had confirmed the release of the album.
+
+The main question became whether there were past false release dates with sold out concerts.
+
+We considered the fact that the album was previously pushed back as late as one day before the scheduled release. Given that the release is scheduled for 3 days from the end of the forecasting period, we thought there was still a reasonable chance that it gets pushed back.
+
+We also considered that both Kanye and Ty Dolla Sign, who collaborated on the album, have posted teasers on social media."
+4,88.48,"What percent of the vote will Vladimir Putin receive in the 2024 Russian Presidential Election?
+
+This question will resolve based on the results posted here: https://en.wikipedia.org/wiki/2024_Russian_presidential_election.","Approval before Jan 2024:
+
+
+
+Approval including Jan 2024:
+
+
+Then standardizing the y-axis yields:
+
+
+
+We don't have Mar 2024 approval rates so we can extrapolate w/ this, March approval has either been above or directly on par w/ Jan approval over time – this is an isomorphic reference class:
+
+
+
+https://en.wikipedia.org/wiki/Electoral_history_of_Vladimir_Putin
+
+Putin is still popular, even after his (arguably failed) invasion of Ukraine
+
+https://en.wikipedia.org/wiki/Public_image_of_Vladimir_Putin 
+
+This gave us [72, 88]"
+4,,"Taylor Swift recently announced the release of her new album The Tortured Poets Department, which is scheduled for April 19, 2024. How many monthly listeners will she have on Spotify on April 26th, 2024?
+
+This question will resolve based on the results shown at 2:45pm on April 26th, 2024 here: https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02.","We studied the time series of her monthly listenership over the last 6-12 months, in the context of major events surrounding her (album releases, concert tour, movie release) and paid special attention to the trends one week after, since April 26th is one  week after he scheduled release of her next album. We found that 7 days following each of “Speak Now (TV)” and  “1989 (TV),"" there was roughly a 4.2% and 3.8% jump in her listenership. 
+
+Next it remained to predict what her following would be on April 19, 2024 when the new album releases. We estimated her last 3 month average to be about 106.6 million followers and she has had a solid 100M for many months, so we expect it will be at least 100M, and likely 5-10M higher than that. Adding 4% to 106.6M gives a mean of 110.8M. We set our lower bound as 100M1.04=104M. For the upper bound, we also thought it is reasonable that she will break her all-time record as she has with her previous album releases, which means going over 111.1M. Her last album release had an 8.5% jump (took one month from the release date to reach it), so anything 8.5% above 111.1M (i.e. 120M) would be too high. Ultimately, we settled on an upper bound of 4% higher than her current all-time high, which is 111.1M1.04= 115.544M."
+4,0,"Will SpaceX launch its rocket ""Starship""  in February 2024?
+
+This question will resolve on March 1, 2024 according to data posted here: https://www.faa.gov/data_research/commercial_space_data. Specifically, this question will resolve positively if there is at least one row under ""Licensed Launches"" with a ""Launch Date (UTC)"" in February 2024, ""Operator"" as ""SpaceX,"" and ""Vehicle"" as ""Starship Super Heavy.""","Elon Musk tweeted on Monday that the launch would be in 3 weeks, which is outside of February. We believe that he tends to be over-ambitious as opposed to under-abitious, so already we believe that it is less than 50% likely that it will happen before the end of February. The question now becomes how much less likely than 50%?
+
+We considered the days of the week of the previous launches and found that they were not on the same day of the week, so that doesn’t necessarily give us much information about what day of the week the next launch might be on. (SpaceX has also launched other vehicles on all days of the week).
+
+Launch 1 was on Thursday, April 20, 2023.
+
+Launch 2 was on Saturday, November 18, 2023.
+
+On the FAA site, we found data on the launch license for this vehicle. We observed that these licenses seem to get revised before each launch, and the last revision was 3 days before launch 2. 
+
+​​Elon Musk tweeted five days before the second launch, saying the FAA had given the license for it. He was 1-day over-ambitious in saying they would launch Nov 17, but it was actually Nov 18. Source
+
+Under the assumption that we’d see a revised launch license before the launch and perhaps a tweet from Elon Musk ~ 5 days before, that leaves 10-12 viable days before the end of February on which the launch could take place. Combined with a lack of other public information, it seems plausible that the license + announcement of the launch date comes rather rapidly. Ultimately, we were not comfortable putting a probability as low as 0.1, and something as high as 0.3 felt a little too high, so we went with 0.2.
+
+We also considered the weather and found that the site in Texas where the previous launches took place had no signs of severely bad weather. This made it still plausible that the launch could happen in February, and ultimately did not affect our forecast that much."
+5,1909,"What will be the attendance of the Cal Women's Basketball game against Arizona (currently scheduled for February 25th, 2024 at noon)?
+
+This question will resolve based on the attendance figure posted to espn.com after the game (i.e. here: https://www.espn.com/womens-college-basketball/game/_/gameId/401609736/arizona-california)
+
+Clarifications:
+In case the game is rescheduled, attendance will be taken from the rescheduled game.
+If the game is not played by the end of April 26th, 2024, this question will resolve as 0.","We based our forecast on the quantiles (0.1 and 0.9) of the empirical distribution from the last 2 seasons, filtered to exclude winter break.We also excluded the attendances vs USC, Stanford, and UCLA since we believe those to be uncharacteristic for this game, since those are three opponents that typically draw larger crowds.
+
+We did not include 0 in our confidence interval because we believe that the probability of a cancelation/postponement past the resolution date was lower than 10% (the lower extreme beyond our confidence interval).
+
+We also considered variation year-over-year, but decided this was probably negligible."
+5,570,"What will be the sum of the durations, in minutes, of the films that win the following awards at the 96th Academy Awards?
+Best picture
+Best actress
+Best animated feature film
+Best original song
+Best animated short film
+For example, if ""American Fiction"" (117 min) wins best best picture, Annette Bening from ""Nyad"" (121 min) wins best actress, ""Spider-Man: Across the Spider-Verse"" (140 min) wins best animated feature film, ""What Was I Made For?"" from ""Barbie"" (114 min) wins best original song, and ""Our Uniform"" (7 min) wins best animated short film, then the answer would resolve as 117+121+140+114+7=499.
+
+Clarifications:
+Durations will be taken as listed on imdb.com.
+In case the same movie wins for multiple of the categories listed above, its duration will count that many times toward the sum.
+In case of a tie for any particular category, the duration for that category will be taken as the mean of those involved in the tie.
+In case of no winner for a particular category (i.e. if the category is suddenly removed), the duration will be 0 for that category.
+If not resolved by April 26, 2024 (i.e. postponement or cancellation of the awards), then the durations will each be taken as 0.","We used the following code (from the student on Ed):
+
+import numpy as np
+
+best_pic = [117, 151, 114, 133, 206, 129, 180, 105, 141, 105]
+best_actress = [121, 206, 151, 129, 141]
+best_animated = [124, 101, 101, 102, 140]
+best_original_song = [104, 114, 114, 99, 206]
+best_short = [17, 13, 7, 11, 11]
+
+sum_mean = sum_variance = 0
+categories = {
+    ""best_pic"": best_pic,
+    ""best_actress"": best_actress,
+    ""best_animated"": best_animated,
+    ""best_original_song"": best_original_song,
+    ""best_short"": best_short,
+}
+cats = [best_pic, best_actress, best_animated, best_original_song, best_short]
+
+means = []
+variances = []
+print, _print = lambda *x, end=None: x, print
+for cat, i in categories.items():
+    sum_mean += np.mean(i)
+    sum_variance += np.var(i)
+    means.append(np.mean(i))
+    variances.append(np.var(i))
+    print(
+        f""Category={cat}: \nmean:"",
+        np.mean(i),
+        ""variance:"",
+        np.var(i),
+        ""std:"",
+        np.std(i),
+        end=""\n"" * 3,
+    )
+print(""sum (assuming independence)"")
+n = len(categories)
+print(
+    ""mean:"", sum_mean / n, ""variances:"", sum_variance / n, ""std:"", np.sqrt(sum_variance)
+)
+
+pic = [0.01, 0.005, 0.007, 0.016, 0.04, 0.003, 0.89, 0.006, 0.02, 0.003]
+actress = [0.6, 0.33, 0.07, 0, 0]
+animated_feat = [
+    0.2605042016806723,
+    0.033613445378151266,
+    0.05882352941176471,
+    0.033613445378151266,
+    0.44537815126050423,
+]
+orig_song = [0.02, 0.17, 0.8, 0, 0.01]
+animated_short = [0.43, 0.15, 0.12, 0.07, 0.23]
+probs = [pic, actress, animated_feat, orig_song, animated_short]
+
+e_pic = sum([p * t for p, t in zip(pic, best_pic)])
+e_actress = sum([p * t for p, t in zip(actress, best_actress)])
+e_animated_feat = sum([p * t for p, t in zip(animated_feat, best_animated)])
+e_orig_song = sum([p * t for p, t in zip(orig_song, best_original_song)])
+e_short = sum([p * t for p, t in zip(animated_short, best_short)])
+e_times = [e_pic, e_actress, e_animated_feat, e_orig_song, e_short]
+
+
+var_e = []
+for p, v, ev, x in zip(probs, variances, e_times, cats):
+    tmp_var = 0
+    for prob, times in zip(p, x):
+        tmp_var += prob * (times - ev) ** 2
+    var_e.append(tmp_var)
+
+print(np.sqrt(sum(var_e)))
+
+Which gives s = sum(var(E[X|Y])) = 49.03898755190687 as the stdev.
+
+µ = sum(E[X|Y]) = sum(e_times) ≈ 564.1331680672268 
+
+so [µ - 1.5s, µ + 1.5s] should be a good estimate
+
+This gives [515.09418051532, 637.6916493950871] or [515, 638]. 
+
+Rahul had a prior that biased him it would be upwards, from looking into some alternate sources (Reddit threads, etc) and moved upwards to [560, 660]
+
+Alternate Solution we did not have time to explore: Directly simulate it, instead of doing the variance calculation."
+5,12,"How many students will have a score higher than that of the trimmed mean in the class forecasting competition as of March 1st, 2024?
+
+This question will resolve based on the results posed to the leaderboard. Course staff will update the leaderboard on March 1 before resolving this question. To avoid giving staff an advantage, course staff will pick future HW prediction questions that will resolve after March 1st, 2024.","Looking at https://js-d-leaderboard-s23-streamlit-app-kmv5je.streamlit.app/ (sp23 leaderboard) we see that at the end of the semester, the Trimmed mean of predictions beats out everyone. I now do a more depth analysis using previous year numbers but a decent prior is that it should monotonically decrease from the 22 it is at now with a trimmed mean of 0.839881, leading to [0, 22] as a very wide 95% CI.
+
+We then looked through past homeworks from https://stat157.com and found https://js-d-leaderboard-streamlit-app-x0qnz0.streamlit.app/ which further lent credence to the trimmed mean beating everyone.
+
+Using the bootstrap feature on the website, we found [11, 24] to be a decent measure of spread within the respective dates, averaged from the average of weeks 1 to 5 and from weeks 1 to 6."
+6,,"Will a new League of Legends champion be released between March 2, 2024 and April 15th, 2024?
+
+This question will be resolved as a 1 if the fandom wiki shows a champion with a release date between 2024-03-02 and 2024-04-15 (inclusive) listed under ""List of Available Champions"" OR if the patch notes mention the release of a champion that becomes playable after March 2, 2024 08:00 UTC but before April 16, 2024 08:00 UTC.","Scraped past release dates of champions
+
+Found number of days between releases
+
+Filtered data to include only values that are at least as large as days since previous release (26).
+
+Ran simulation on filtered data and took 0.1 and 0.9 quantiles
+
+Checked proportion of simulations where the value was between 31 and 75 (meaning it was in the range of dates of interest)
+
+Gave proportion of 0.5487
+
+Re-ran simulation to be on data since 2021 only
+
+Gave proportion of 0.3571
+
+We also considered the upcoming tournament schedule and what would make sense hype-wise for the game makers to do.
+
+This made us adjust the forecasts down a lot.
+
+We read online that 3-4 champions where set to release this year. One has already released, so it seems reasonably likely that the next champion releases later than April 15, 2024."
+6,111839191,"How many views will Mr. Beast's most recent YouTube video have, as of April 12, 2024 at 2:30pm PT?
+
+Clarifications:
+Counts only videos available on the Mr. Beast main channel at the resolution date/time.
+Videos that are taken down as of the resolution date do not count.
+In case no videos are available (i.e. channel is deleted or all videos are taken down) this will resolve as 0.","We considered a mixture distribution between him releasing on the Saturday one week before the homework was due and the Saturday two weeks before the homework was due. We knew that he releases on Saturdays from #84bbe
+We mostly based our forecasts on past data of his viewership. We used the website in #84bba. He consistently gets 90M+ fairly quickly on new videos which gives a good ballpark of the lower bound. We also looked at the highest amount he has gotten recently and this gave a good ballpark for the upper bound.
+
+We considered the release schedule of Mr. Beast’s videos and how old we expected the most recent one to be at the time of resolution. If we had spent more time on this we would have considered this in further depth."
+6,89,"How many club tables will there be on Upper Sproul at 1PM on April 13, 2024?
+
+Clarifications:
+This will resolve based on a count made by course staff.
+Any table with a visible name of an organization, including empty tables will be counted.","We observed that the given date is Cal Day
+
+Some preliminary research yielded the following information
+
+""With more than hundred clubs set to table on April 22, Cal Day will be showcasing a diverse group of campus organizations, supported with events and activities throughout the day for prospective students."" (source)
+
+We considered weather as a potential deterrent but long range forecasts said it is predicted to be sunny (62 degrees, source) with no rain in that week
+
+We considered the effect of the time of day and decided that although 1pm is around lunchtime, it will not affect things that much (based on prior knowledge of tabling)
+
+We considered what we thought would be the upper limit of the number of tables that could fit on Upper Sproul.
+
+A friend recalled seeing at least 60 tables on Cal Day in a previous year."
+7,18007.5,"In the Reykjavik Open 2024 chess tournament, what will be the product of the top 5 players' scores at the end of the 9th round (currently scheduled for March 15-21, 2024)? Scoring in chess is computed as follows: 0 points for a loss, 0.5 points for a draw, 1 point for a win.
+
+This question will resolve based on results posted here: https://www.chess.com/events/2024-reykjavik-open/results. Note that points are cumulative by round (see example below).
+
+Example:
+Suppose Player A wins in round 1 and draws in round 2. Their score at the end of round 2 would be 1.5 since they earned 1 point in round 1 and 0.5 in round 2. If Player A then goes on to lose the rest of their games, their score after round 9 would be 1 + 0.5 + 0 * 7 = 1.5. 
+
+Resolution criteria:
+If the tournament is canceled or if results through 9 rounds are not posted to the site linked above by April 26th, 2024, this question will resolve to 0.","Last several years' numbers:
+
+18007.5
+
+18007.5 (again)
+
+15526.875
+
+16807
+
+15526.875
+
+We asked ourselves: “what are the highest and lowest possible finishes we can imagine?”
+
+We considered the following top end finishes:
+
+7.5 7 7 7 7
+
+8 7 7 7 7
+
+7.5 7.5 7 7 7
+
+And these for the low end:
+
+7.5 7 7 6.5 6.5
+
+7 7 7 6.5 6.5
+
+7.5 7 6.5 6.5 6.5
+
+7 7 6.5 6.5 6.5
+
+We also considered the number of participants:
+
+ 2018: 248 (finish 7.5 7 7 6.5 6.5)
+
+ 2019: 238 (finish 7 7 7 7 7)
+
+ 2021: 180 (finish 7.5 7 7 6.5 6.5 after 9 rounds ]out of 11])
+
+ 2022: 245 (finish 7.5 7 7 7 7)
+
+ 2023: 401 (finish 7.5 7 7 7 7)
+
+2024: 438
+
+We arrived at candidate lower bounds of:
+
+7.5 7 7 6.5 6.5 -> 15526.875
+
+7 7 7 7 7 -> 16807
+
+We arrived at candidate lower bounds of:
+
+8.5 7 7 7 7 -> 20580
+
+7.5 7.5 7.5 7 7 -> 20671.875
+
+Here, the lower bound matters more to get right since it's a bigger swing"
+7,,"How many United States federal bills will become laws between March 6, 2024 (inclusive) and April 26, 2024 (inclusive)?
+
+This question will resolve according to legiscan.com (specifically https://legiscan.com/US/legislation/2023?status=passed&type=bill) on April 26, 2024 at 2:30pm whether or not the site is up to date. At the resolution time, course staff will count the number of bills on this site marked as ""Passed"" with an associated date in the range above.","We did a Python simulation using the numbers from past years. This was actually an application of AI Forecasting with LLMs, since we used ChatGPT to generate a forecast and then tightened it based on the plots it made of distributions of past years.
+
+We tightened it via politics news that not many bills were passed this year due to politics and used this as a prior to compare to other years where fewer bills were passed."
+7,,"How many layoffs will tech companies have made in 2024 as of April 26, 2024, according to layoffs.fyi?
+
+This question will resolve based on the number on layoffs.fyi at at 2:40pm.
+
+Resolution criteria:
+If the linked site is down at the resolution time, this question will resolve to the value as of the time of writing this question, which is 45,356.","Final interval: [56440, 90940]
+
+Squiggle simulation
+
+Computed ranges for layoffs per day based on 2022, 2023, and 2024 (YTD) data
+
+Included a point mass at the extrapolated value from today using a first order forecast
+
+See squiggle link
+
+Observed that this year is at a higher pace than previous (~784 per day vs. 721/day and 452/day)
+
+This year is probably more similar to last year, based on recency
+
+Observed that the cumulative value we are forecasting has some “big hitters” from big companies with a lot of layoffs at once (500-5000 at a time). This could cause the final value to be higher than expected, so airing on the high side seems advisable.
+
+“Other options” like a huge recession or uncharacteristically massive wave of layoffs seems negligibly unlikely in the given time frame."
+8,39.1,"What will be Joe Biden's approval rating on March 31st?
+
+This question will resolve based on the percentage listed next to ""Approve"" for the date March 31st according to this webpage.
+
+Your answer should be submitted as a percentage. i.e: 50 would represent 50%","We first sourced the data from https://projects.fivethirtyeight.com/biden-approval-data/approval_topline.csv 
+
+import pandas as pd
+
+import numpy as np
+
+
+
+
+df = pd.read_csv('approval_topline_2024.csv')
+
+df = df[df['subgroup'] == 'All polls']
+
+approves = df['approve_estimate'].tolist()
+
+
+
+
+# find all 19-day differences
+
+DAYS = 19
+
+differences = [end - start for start, end in zip(approves[:-DAYS], approves[DAYS:])]
+
+FAIR = 38
+
+STD80 = 1.282
+
+stdev = np.std(differences)
+
+print(f'80% confidence interval: {FAIR-STD80*stdev} to {FAIR+STD80*stdev}')
+
+
+
+
+L = np.percentile(differences, 10)
+
+L, FAIR + L
+
+
+
+
+U = np.percentile(differences, 90)
+
+U, FAIR + U
+
+Then did a basic python simulation for 19-days out since we are predicting this on March 12th for March 31st.
+
+Some high level considerations:
+
+Biden is in an election year and we’ve noticed that he’s on a current downwards trend and that momentum may be hard to break (he’s already gone a good amount up and it’s unlikely for him to convince anyone since most of his problems stem from old-age so we pretty much expect his popularity to decrease, with some variance) so we adjust wider downwards. "
+8,1231020,"What will be the sale total (in USD) of Christie's upcoming Indian, Himalayan and Southeast Asian Works of Art auction (currently scheduled for 3/20)? 
+
+Resolution Criteria:
+
+Resolves shortly after 3/20 with results posted here.
+If results are not posted by April 26th, 2024, this question will resolve to 0.","Some high level considerations:
+
+Number of pieces: 64
+
+We looked at past auctions to get a sense of how often items sold within their estimated range and how often they were extremely far below or above
+
+~10% seemed to not sell
+
+~⅓ went much higher than their range (10-100% higher than their range)
+
+About 10% sold far below their range
+
+Squiggle rough sketch of distribution
+
+Adjusted upper bound upward by about 50% since that seemed reasonable based on the findings above.
+
+Adjusted lower bound interval downward to hedge against the consideration that ~20% usually went for lower than their value/did not sell.
+
+In hindsight, we should have had a better model to account for the proportion of pieces that actually get sold."
+8,4635832,"What will be the maximum number of concurrent Twitch viewers in March 2024?
+
+Resolution Criteria:
+Resolves on April 1, 2024 according to the graph on this website titled ""CONCURRENT VIEWERS BY MONTH.""
+If the relevant graph is unavailable on the resolution date and the information is not available on this website, the question will resolve to the current value as of the writing of this question, which is 4,290,263.","We used https://twitchtracker.com/statistics and collected data which we then did an approximate MCMC sample (done with help from GPT) and took the 10th to 90th %iles of the result.
+
+We paid close attention to the min and max seen in certain time periods."
+9,43,"How many BART service alerts will there be between March 20th, 2024 (inclusive) and March 27th, 2024 (exclusive)? 
+
+Resolution Criteria:
+
+Resolves on March 27th at noon according to the number of posts here with a date/timestamp from March 20, 21, 22, 23, 24, 25, or 26, in the year 2024.
+Any posts that are deleted by the time of resolution do not count.
+If the X account for @SFBARTalert is renamed, then the link used for resolution will change accordingly.","We modeled this as a Poisson process
+
+Empirical rate was estimated as 5.4 per day or 37.8 per week
+
+Simulation with 1M trials yielded [30, 46]
+
+We also check the empirical quantiles from the data
+
+Yielded [27, 48]
+
+We also considered that the alerts seem correlated since some seem to refer to the same events. We widened the interval a little bit to account for this."
+9,2.366,"What will be gap (in seconds) between the first and second place finishes of the F1 Australian Grand Prix?
+
+For example, if instead this were for the Saudi Arabian Grand Prix, the answer would have resolved to 13.643, as per here. Similarly, for the Bahrain Grand Prix, it would have resolved to 22.457 as per here.
+Resolution criteria:
+
+Resolves based on the results posted to motorsportstats.com (i.e. here).
+If the event is postponed, this question will resolve based on the results from the postponed event, provided that the results are available by April 26th.
+If results are not available on motorsportstats.com by April 26th, 2024, then this question will resolve to zero.","We looked at historical data for this race over the years
+
+Data came to be [0.179, 20.524, 20.886, 5.036, 9.975, 8.060, 1.360, 26.777, 12.451, 2.139, 22.297, 12.034, 0.807, 5.478, 7.242, 1.829, 5.553, 13.605]
+
+Yielded an empirical interval of [1.19, 21.31].
+
+"
+9,879.947,"What will the stock price of NVIDIA be on April 5 at 2:30pm PDT?
+
+Resolution criteria:
+Resolves according to this site.
+The value will be rounded to the nearest cent.
+If the site linked above is down or otherwise unavailable for resolution, this question will resolve according to Yahoo Finance or some other reputable site.","We first made a squiggle simulation from various sources:
+
+Then we narrowed the interval from financial analysts found online (we saw that it was just expected to break 1000 so we narrowed it down to there)"
+10,,"On May 1, 2024, how many NCAA track records will this site show as being broken in the month of April 2024?
+
+Resolves here: 
+
+Clarifications:
+
+Counts only those with a date in April 2024.
+Includes ""Women's indoor records,"" ""Men's indoor records,"" ""Women's outdoor records,"" and ""Men's outdoor records.""
+This question will resolve on May 1, 2024 with the information on the site linked above, regardless of whether the site is up to date.",
+10,,"What will be the sum of the all-time citation counts for Berkeley Professors Pieter Abbeel and Sergey Levine on April 26th, 2024?
+
+Resolution criteria:
+Resolves at 2:45pm on April 26th, 2024 according to Google Scholar.
+All-time citation count refers to the number next to ""Citations"" and below ""All"" on the right side of the page.",
+10,38,"What will be the product of humidity and temperature in Berkeley on April 8th at 11:30am, as reported on weather.com?
+
+Resolution criteria:
+
+Humidity is measured as decimal in the interval [0, 1]. Currently it says 66% which would be treated as 0.66 for the product.
+Temperature will be measured in degrees Fahrenheit
+Course staff will use the hour-by-hour data from this page to resolve the question.",
+11,,"What will be the average delay of the #1 entry on flightradar24.com's airport disruption map on 4/15 at 1:50pm?
+
+Resolution criteria:
+If the site is down at the resolution time and course staff is unable to recover the value from the time of resolution, this question will resolve as 0.
+""#1 entry"" in the problem statement refers to the row(s) with a 1 in the ""rank"" column.
+If multiple rows have a value of 1 in the ""rank"" column, this question will resolve as the average of the respective values from the ""average delay"" column.",
+11,0.3799209985,"What will be the standard deviation of the class scores on question 6.3 of the forecasting competition (which was ""How many club tables will there be on Upper Sproul at 1PM on April 13, 2024?"").
+
+Resolution Criteria:
+Resolves according to the scores posted on the leaderboard.
+Excludes the ""trimmed mean.""",
+11,,"How many people will be in lecture at 4:15pm on Wednesday, April 17th? 
+
+This will resolve based on a count conducted by the course staff.",
